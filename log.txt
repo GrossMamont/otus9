@@ -1,0 +1,549 @@
+vagrant up
+Bringing machine 'nfss' up with 'virtualbox' provider...
+Bringing machine 'nfsc' up with 'virtualbox' provider...
+==> nfss: Importing base box 'ubuntu/jammy64'...
+==> nfss: Matching MAC address for NAT networking...
+==> nfss: Checking if box 'ubuntu/jammy64' version '20241002.0.0' is up to date...
+==> nfss: Setting the name of the VM: 9_nfss_1729856652828_73757
+==> nfss: Clearing any previously set network interfaces...
+==> nfss: Preparing network interfaces based on configuration...
+    nfss: Adapter 1: nat
+    nfss: Adapter 2: intnet
+==> nfss: Forwarding ports...
+    nfss: 22 (guest) => 2222 (host) (adapter 1)
+==> nfss: Running 'pre-boot' VM customizations...
+==> nfss: Booting VM...
+==> nfss: Waiting for machine to boot. This may take a few minutes...
+    nfss: SSH address: 127.0.0.1:2222
+    nfss: SSH username: vagrant
+    nfss: SSH auth method: private key
+    nfss: Warning: Connection reset. Retrying...
+    nfss: Warning: Remote connection disconnect. Retrying...
+    nfss: 
+    nfss: Vagrant insecure key detected. Vagrant will automatically replace
+    nfss: this with a newly generated keypair for better security.
+    nfss: 
+    nfss: Inserting generated public key within guest...
+    nfss: Removing insecure key from the guest if it's present...
+    nfss: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> nfss: Machine booted and ready!
+==> nfss: Checking for guest additions in VM...
+    nfss: The guest additions on this VM do not match the installed version of
+    nfss: VirtualBox! In most cases this is fine, but in rare cases it can
+    nfss: prevent things such as shared folders from working properly. If you see
+    nfss: shared folder errors, please make sure the guest additions within the
+    nfss: virtual machine match the version of VirtualBox you have installed on
+    nfss: your host and reload your VM.
+    nfss: 
+    nfss: Guest Additions Version: 6.0.0 r127566
+    nfss: VirtualBox Version: 6.1
+==> nfss: Setting hostname...
+==> nfss: Configuring and enabling network interfaces...
+==> nfss: Mounting shared folders...
+    nfss: /vagrant => /home/ss/release/9
+==> nfss: Running provisioner: shell...
+    nfss: Running: /tmp/vagrant-shell20241025-58473-2bmozi.sh
+    nfss: Настраиваем сервер NFS
+    nfss: Установим утилиты
+    nfss: Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+    nfss: Get:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+    nfss: Get:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+    nfss: Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+    nfss: Get:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+    nfss: Get:6 http://archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+    nfss: Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+    nfss: Get:8 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+    nfss: Get:9 http://archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+    nfss: Get:10 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+    nfss: Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2113 kB]
+    nfss: Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [363 kB]
+    nfss: Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [17.9 kB]
+    nfss: Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [2577 kB]
+    nfss: Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [445 kB]
+    nfss: Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1133 kB]
+    nfss: Get:17 http://archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [265 kB]
+    nfss: Get:18 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [26.4 kB]
+    nfss: Get:19 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [43.3 kB]
+    nfss: Get:20 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [10.8 kB]
+    nfss: Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [444 B]
+    nfss: Get:22 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [67.7 kB]
+    nfss: Get:23 http://archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [11.1 kB]
+    nfss: Get:24 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [388 B]
+    nfss: Get:25 http://archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
+    nfss: Get:26 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [28.8 kB]
+    nfss: Get:27 http://archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.5 kB]
+    nfss: Get:28 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [672 B]
+    nfss: Get:29 http://archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
+    nfss: Get:30 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1896 kB]
+    nfss: Get:31 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [305 kB]
+    nfss: Get:32 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [13.3 kB]
+    nfss: Get:33 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [2517 kB]
+    nfss: Get:34 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [435 kB]
+    nfss: Get:35 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [911 kB]
+    nfss: Get:36 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [180 kB]
+    nfss: Get:37 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [19.5 kB]
+    nfss: Get:38 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [37.2 kB]
+    nfss: Get:39 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [7588 B]
+    nfss: Get:40 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [228 B]
+    nfss: Fetched 34.2 MB in 10s (3414 kB/s)
+    nfss: Reading package lists...
+    nfss: Reading package lists...
+    nfss: Building dependency tree...
+    nfss: Reading state information...
+    nfss: The following additional packages will be installed:
+    nfss:   bzip2 keyutils libnfsidmap1 libssh2-1 mailcap mc-data mime-support
+    nfss:   nfs-common rpcbind unzip
+    nfss: Suggested packages:
+    nfss:   bzip2-doc arj catdvi | texlive-binaries dbview djvulibre-bin epub-utils
+    nfss:   genisoimage gv imagemagick libaspell-dev links | w3m | lynx odt2txt
+    nfss:   poppler-utils python python-boto python-tz unar wimtools xpdf | pdf-viewer
+    nfss:   zip watchdog
+    nfss: The following NEW packages will be installed:
+    nfss:   bzip2 keyutils libnfsidmap1 libssh2-1 mailcap mc mc-data mime-support
+    nfss:   nfs-common nfs-kernel-server rpcbind unzip
+    nfss: 0 upgraded, 12 newly installed, 0 to remove and 9 not upgraded.
+    nfss: Need to get 2842 kB of archives.
+    nfss: After this operation, 10.8 MB of additional disk space will be used.
+    nfss: Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnfsidmap1 amd64 1:2.6.1-1ubuntu1.2 [42.9 kB]
+    nfss: Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 rpcbind amd64 1.2.6-2build1 [46.6 kB]
+    nfss: Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 keyutils amd64 1.6.1-2ubuntu3 [50.4 kB]
+    nfss: Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 nfs-common amd64 1:2.6.1-1ubuntu1.2 [241 kB]
+    nfss: Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 bzip2 amd64 1.0.8-5build1 [34.8 kB]
+    nfss: Get:6 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libssh2-1 amd64 1.10.0-3 [109 kB]
+    nfss: Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 mailcap all 3.70+nmu1ubuntu1 [23.8 kB]
+    nfss: Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 mc-data all 3:4.8.27-1 [1427 kB]
+    nfss: Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 mc amd64 3:4.8.27-1 [547 kB]
+    nfss: Get:10 http://archive.ubuntu.com/ubuntu jammy/main amd64 mime-support all 3.66 [3696 B]
+    nfss: Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 nfs-kernel-server amd64 1:2.6.1-1ubuntu1.2 [140 kB]
+    nfss: Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 unzip amd64 6.0-26ubuntu3.2 [175 kB]
+    nfss: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    nfss: Fetched 2842 kB in 2s (1571 kB/s)
+    nfss: Selecting previously unselected package libnfsidmap1:amd64.
+(Reading database ... 64083 files and directories currently installed.)
+    nfss: Preparing to unpack .../00-libnfsidmap1_1%3a2.6.1-1ubuntu1.2_amd64.deb ...
+    nfss: Unpacking libnfsidmap1:amd64 (1:2.6.1-1ubuntu1.2) ...
+    nfss: Selecting previously unselected package rpcbind.
+    nfss: Preparing to unpack .../01-rpcbind_1.2.6-2build1_amd64.deb ...
+    nfss: Unpacking rpcbind (1.2.6-2build1) ...
+    nfss: Selecting previously unselected package keyutils.
+    nfss: Preparing to unpack .../02-keyutils_1.6.1-2ubuntu3_amd64.deb ...
+    nfss: Unpacking keyutils (1.6.1-2ubuntu3) ...
+    nfss: Selecting previously unselected package nfs-common.
+    nfss: Preparing to unpack .../03-nfs-common_1%3a2.6.1-1ubuntu1.2_amd64.deb ...
+    nfss: Unpacking nfs-common (1:2.6.1-1ubuntu1.2) ...
+    nfss: Selecting previously unselected package bzip2.
+    nfss: Preparing to unpack .../04-bzip2_1.0.8-5build1_amd64.deb ...
+    nfss: Unpacking bzip2 (1.0.8-5build1) ...
+    nfss: Selecting previously unselected package libssh2-1:amd64.
+    nfss: Preparing to unpack .../05-libssh2-1_1.10.0-3_amd64.deb ...
+    nfss: Unpacking libssh2-1:amd64 (1.10.0-3) ...
+    nfss: Selecting previously unselected package mailcap.
+    nfss: Preparing to unpack .../06-mailcap_3.70+nmu1ubuntu1_all.deb ...
+    nfss: Unpacking mailcap (3.70+nmu1ubuntu1) ...
+    nfss: Selecting previously unselected package mc-data.
+    nfss: Preparing to unpack .../07-mc-data_3%3a4.8.27-1_all.deb ...
+    nfss: Unpacking mc-data (3:4.8.27-1) ...
+    nfss: Selecting previously unselected package mc.
+    nfss: Preparing to unpack .../08-mc_3%3a4.8.27-1_amd64.deb ...
+    nfss: Unpacking mc (3:4.8.27-1) ...
+    nfss: Selecting previously unselected package mime-support.
+    nfss: Preparing to unpack .../09-mime-support_3.66_all.deb ...
+    nfss: Unpacking mime-support (3.66) ...
+    nfss: Selecting previously unselected package nfs-kernel-server.
+    nfss: Preparing to unpack .../10-nfs-kernel-server_1%3a2.6.1-1ubuntu1.2_amd64.deb ...
+    nfss: Unpacking nfs-kernel-server (1:2.6.1-1ubuntu1.2) ...
+    nfss: Selecting previously unselected package unzip.
+    nfss: Preparing to unpack .../11-unzip_6.0-26ubuntu3.2_amd64.deb ...
+    nfss: Unpacking unzip (6.0-26ubuntu3.2) ...
+    nfss: Setting up libnfsidmap1:amd64 (1:2.6.1-1ubuntu1.2) ...
+    nfss: Setting up unzip (6.0-26ubuntu3.2) ...
+    nfss: Setting up rpcbind (1.2.6-2build1) ...
+    nfss: Created symlink /etc/systemd/system/multi-user.target.wants/rpcbind.service → /lib/systemd/system/rpcbind.service.
+    nfss: Created symlink /etc/systemd/system/sockets.target.wants/rpcbind.socket → /lib/systemd/system/rpcbind.socket.
+    nfss: Setting up bzip2 (1.0.8-5build1) ...
+    nfss: Setting up mc-data (3:4.8.27-1) ...
+    nfss: Setting up keyutils (1.6.1-2ubuntu3) ...
+    nfss: Setting up libssh2-1:amd64 (1.10.0-3) ...
+    nfss: Setting up mailcap (3.70+nmu1ubuntu1) ...
+    nfss: Setting up mime-support (3.66) ...
+    nfss: Setting up mc (3:4.8.27-1) ...
+    nfss: Setting up nfs-common (1:2.6.1-1ubuntu1.2) ...
+    nfss: 
+    nfss: Creating config file /etc/idmapd.conf with new version
+    nfss: 
+    nfss: Creating config file /etc/nfs.conf with new version
+    nfss: Adding system user `statd' (UID 114) ...
+    nfss: Adding new user `statd' (UID 114) with group `nogroup' ...
+    nfss: Not creating home directory `/var/lib/nfs'.
+    nfss: Created symlink /etc/systemd/system/multi-user.target.wants/nfs-client.target → /lib/systemd/system/nfs-client.target.
+    nfss: Created symlink /etc/systemd/system/remote-fs.target.wants/nfs-client.target → /lib/systemd/system/nfs-client.target.
+    nfss: auth-rpcgss-module.service is a disabled or a static unit, not starting it.
+    nfss: nfs-idmapd.service is a disabled or a static unit, not starting it.
+    nfss: nfs-utils.service is a disabled or a static unit, not starting it.
+    nfss: proc-fs-nfsd.mount is a disabled or a static unit, not starting it.
+    nfss: rpc-gssd.service is a disabled or a static unit, not starting it.
+    nfss: rpc-statd-notify.service is a disabled or a static unit, not starting it.
+    nfss: rpc-statd.service is a disabled or a static unit, not starting it.
+    nfss: rpc-svcgssd.service is a disabled or a static unit, not starting it.
+    nfss: rpc_pipefs.target is a disabled or a static unit, not starting it.
+    nfss: var-lib-nfs-rpc_pipefs.mount is a disabled or a static unit, not starting it.
+    nfss: Setting up nfs-kernel-server (1:2.6.1-1ubuntu1.2) ...
+    nfss: Created symlink /etc/systemd/system/nfs-client.target.wants/nfs-blkmap.service → /lib/systemd/system/nfs-blkmap.service.
+    nfss: Created symlink /etc/systemd/system/multi-user.target.wants/nfs-server.service → /lib/systemd/system/nfs-server.service.
+    nfss: nfs-mountd.service is a disabled or a static unit, not starting it.
+    nfss: nfsdcld.service is a disabled or a static unit, not starting it.
+    nfss: 
+    nfss: Creating config file /etc/exports with new version
+    nfss: 
+    nfss: Creating config file /etc/default/nfs-kernel-server with new version
+    nfss: Processing triggers for man-db (2.10.2-1) ...
+    nfss: Processing triggers for libc-bin (2.35-0ubuntu3.8) ...
+    nfss: 
+    nfss: Running kernel seems to be up-to-date.
+    nfss: 
+    nfss: No services need to be restarted.
+    nfss: 
+    nfss: No containers need to be restarted.
+    nfss: 
+    nfss: No user sessions are running outdated binaries.
+    nfss: 
+    nfss: No VM guests are running outdated hypervisor (qemu) binaries on this host.
+    nfss: Посмотрим /etc/nfs.conf
+    nfss: #
+    nfss: # This is a general configuration for the
+    nfss: # NFS daemons and tools
+    nfss: #
+    nfss: [general]
+    nfss: pipefs-directory=/run/rpc_pipefs
+    nfss: #
+    nfss: [exports]
+    nfss: # rootdir=/export
+    nfss: #
+    nfss: [exportfs]
+    nfss: # debug=0
+    nfss: #
+    nfss: [gssd]
+    nfss: # verbosity=0
+    nfss: # rpc-verbosity=0
+    nfss: # use-memcache=0
+    nfss: # use-machine-creds=1
+    nfss: # use-gss-proxy=0
+    nfss: # avoid-dns=1
+    nfss: # limit-to-legacy-enctypes=0
+    nfss: # context-timeout=0
+    nfss: # rpc-timeout=5
+    nfss: # keytab-file=/etc/krb5.keytab
+    nfss: # cred-cache-directory=
+    nfss: # preferred-realm=
+    nfss: #
+    nfss: [lockd]
+    nfss: # port=0
+    nfss: # udp-port=0
+    nfss: #
+    nfss: [mountd]
+    nfss: # debug=0
+    nfss: manage-gids=y
+    nfss: # descriptors=0
+    nfss: # port=0
+    nfss: # threads=1
+    nfss: # reverse-lookup=n
+    nfss: # state-directory-path=/var/lib/nfs
+    nfss: # ha-callout=
+    nfss: #
+    nfss: [nfsdcld]
+    nfss: # debug=0
+    nfss: # storagedir=/var/lib/nfs/nfsdcld
+    nfss: #
+    nfss: [nfsdcltrack]
+    nfss: # debug=0
+    nfss: # storagedir=/var/lib/nfs/nfsdcltrack
+    nfss: #
+    nfss: [nfsd]
+    nfss: # debug=0
+    nfss: # threads=8
+    nfss: # host=
+    nfss: # port=0
+    nfss: # grace-time=90
+    nfss: # lease-time=90
+    nfss: # udp=n
+    nfss: # tcp=y
+    nfss: # vers2=n
+    nfss: # vers3=y
+    nfss: # vers4=y
+    nfss: # vers4.0=y
+    nfss: # vers4.1=y
+    nfss: # vers4.2=y
+    nfss: # rdma=n
+    nfss: # rdma-port=20049
+    nfss: #
+    nfss: [statd]
+    nfss: # debug=0
+    nfss: # port=0
+    nfss: # outgoing-port=0
+    nfss: # name=
+    nfss: # state-directory-path=/var/lib/nfs/statd
+    nfss: # ha-callout=
+    nfss: # no-notify=0
+    nfss: #
+    nfss: [sm-notify]
+    nfss: # debug=0
+    nfss: # force=0
+    nfss: # retry-time=900
+    nfss: # outgoing-port=
+    nfss: # outgoing-addr=
+    nfss: # lift-grace=y
+    nfss: #
+    nfss: [svcgssd]
+    nfss: # principal=
+    nfss: Посмотрим ss -tnplu
+    nfss: Netid State  Recv-Q Send-Q    Local Address:Port  Peer Address:PortProcess
+    nfss: udp   UNCONN 0      0               0.0.0.0:39650      0.0.0.0:*
+    nfss: udp   UNCONN 0      0               0.0.0.0:59295      0.0.0.0:*    users:(("rpc.statd",pid=3355,fd=8))
+    nfss: udp   UNCONN 0      0             127.0.0.1:987        0.0.0.0:*    users:(("rpc.statd",pid=3355,fd=5))
+    nfss: udp   UNCONN 0      0         127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=557,fd=13))
+    nfss: udp   UNCONN 0      0      10.0.2.15%enp0s3:68         0.0.0.0:*    users:(("systemd-network",pid=1729,fd=18))
+    nfss: udp   UNCONN 0      0               0.0.0.0:46171      0.0.0.0:*    users:(("rpc.mountd",pid=3364,fd=12))
+    nfss: udp   UNCONN 0      0               0.0.0.0:111        0.0.0.0:*    users:(("rpcbind",pid=2772,fd=5),("systemd",pid=1,fd=65))
+    nfss: udp   UNCONN 0      0               0.0.0.0:50381      0.0.0.0:*    users:(("rpc.mountd",pid=3364,fd=4))
+    nfss: udp   UNCONN 0      0               0.0.0.0:37130      0.0.0.0:*    users:(("rpc.mountd",pid=3364,fd=8))
+    nfss: udp   UNCONN 0      0                  [::]:54862         [::]:*    users:(("rpc.statd",pid=3355,fd=10))
+    nfss: udp   UNCONN 0      0                  [::]:35467         [::]:*
+    nfss: udp   UNCONN 0      0                  [::]:40708         [::]:*    users:(("rpc.mountd",pid=3364,fd=14))
+    nfss: udp   UNCONN 0      0                  [::]:37705         [::]:*    users:(("rpc.mountd",pid=3364,fd=10))
+    nfss: udp   UNCONN 0      0                  [::]:111           [::]:*    users:(("rpcbind",pid=2772,fd=7),("systemd",pid=1,fd=67))
+    nfss: udp   UNCONN 0      0                  [::]:56626         [::]:*    users:(("rpc.mountd",pid=3364,fd=6))
+    nfss: tcp   LISTEN 0      4096            0.0.0.0:41579      0.0.0.0:*    users:(("rpc.mountd",pid=3364,fd=5))
+    nfss: tcp   LISTEN 0      4096            0.0.0.0:53119      0.0.0.0:*    users:(("rpc.statd",pid=3355,fd=9))
+    nfss: tcp   LISTEN 0      64              0.0.0.0:46065      0.0.0.0:*
+    nfss: tcp   LISTEN 0      128             0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=819,fd=3))
+    nfss: tcp   LISTEN 0      64              0.0.0.0:2049       0.0.0.0:*
+    nfss: tcp   LISTEN 0      4096            0.0.0.0:111        0.0.0.0:*    users:(("rpcbind",pid=2772,fd=4),("systemd",pid=1,fd=64))
+    nfss: tcp   LISTEN 0      4096            0.0.0.0:52381      0.0.0.0:*    users:(("rpc.mountd",pid=3364,fd=13))
+    nfss: tcp   LISTEN 0      4096            0.0.0.0:56753      0.0.0.0:*    users:(("rpc.mountd",pid=3364,fd=9))
+    nfss: tcp   LISTEN 0      4096      127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=557,fd=14))
+    nfss: tcp   LISTEN 0      4096               [::]:46601         [::]:*    users:(("rpc.statd",pid=3355,fd=11))
+    nfss: tcp   LISTEN 0      64                 [::]:43579         [::]:*
+    nfss: tcp   LISTEN 0      4096               [::]:48001         [::]:*    users:(("rpc.mountd",pid=3364,fd=7))
+    nfss: tcp   LISTEN 0      4096               [::]:41959         [::]:*    users:(("rpc.mountd",pid=3364,fd=15))
+    nfss: tcp   LISTEN 0      128                [::]:22            [::]:*    users:(("sshd",pid=819,fd=4))
+    nfss: tcp   LISTEN 0      64                 [::]:2049          [::]:*
+    nfss: tcp   LISTEN 0      4096               [::]:111           [::]:*    users:(("rpcbind",pid=2772,fd=6),("systemd",pid=1,fd=66))
+    nfss: tcp   LISTEN 0      4096               [::]:50357         [::]:*    users:(("rpc.mountd",pid=3364,fd=11))
+    nfss: создаём и настраиваем директорию
+    nfss: Создаём в файле __/etc/exports__ структуру, которая позволит экспортировать ранее созданную директорию
+    nfss: экспортируем ранее созданную директорию
+    nfss: проверяем экспортированную директорию
+    nfss: /srv/share  192.168.56.11/32(sync,wdelay,hide,no_subtree_check,sec=sys,rw,secure,no_root_squash,no_all_squash)
+    nfss: запишем что-нибудь в каталог /srv/share/upload/from_server
+    nfss: Убедимся что всё записано
+    nfss: Эта строка записана с сервера в /srv/share/upload/from_server
+==> nfsc: Importing base box 'ubuntu/jammy64'...
+==> nfsc: Matching MAC address for NAT networking...
+==> nfsc: Checking if box 'ubuntu/jammy64' version '20241002.0.0' is up to date...
+==> nfsc: Setting the name of the VM: 9_nfsc_1729856780320_11903
+==> nfsc: Fixed port collision for 22 => 2222. Now on port 2200.
+==> nfsc: Clearing any previously set network interfaces...
+==> nfsc: Preparing network interfaces based on configuration...
+    nfsc: Adapter 1: nat
+    nfsc: Adapter 2: intnet
+==> nfsc: Forwarding ports...
+    nfsc: 22 (guest) => 2200 (host) (adapter 1)
+==> nfsc: Running 'pre-boot' VM customizations...
+==> nfsc: Booting VM...
+==> nfsc: Waiting for machine to boot. This may take a few minutes...
+    nfsc: SSH address: 127.0.0.1:2200
+    nfsc: SSH username: vagrant
+    nfsc: SSH auth method: private key
+    nfsc: Warning: Connection reset. Retrying...
+    nfsc: 
+    nfsc: Vagrant insecure key detected. Vagrant will automatically replace
+    nfsc: this with a newly generated keypair for better security.
+    nfsc: 
+    nfsc: Inserting generated public key within guest...
+    nfsc: Removing insecure key from the guest if it's present...
+    nfsc: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> nfsc: Machine booted and ready!
+==> nfsc: Checking for guest additions in VM...
+    nfsc: The guest additions on this VM do not match the installed version of
+    nfsc: VirtualBox! In most cases this is fine, but in rare cases it can
+    nfsc: prevent things such as shared folders from working properly. If you see
+    nfsc: shared folder errors, please make sure the guest additions within the
+    nfsc: virtual machine match the version of VirtualBox you have installed on
+    nfsc: your host and reload your VM.
+    nfsc: 
+    nfsc: Guest Additions Version: 6.0.0 r127566
+    nfsc: VirtualBox Version: 6.1
+==> nfsc: Setting hostname...
+==> nfsc: Configuring and enabling network interfaces...
+==> nfsc: Mounting shared folders...
+    nfsc: /vagrant => /home/ss/release/9
+==> nfsc: Running provisioner: shell...
+    nfsc: Running: /tmp/vagrant-shell20241025-58473-uxxd2j.sh
+    nfsc: Настраиваем клиент NFS
+    nfsc: Установим утилиты
+    nfsc: Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+    nfsc: Get:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+    nfsc: Get:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+    nfsc: Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+    nfsc: Get:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+    nfsc: Get:6 http://archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+    nfsc: Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+    nfsc: Get:8 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+    nfsc: Get:9 http://archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+    nfsc: Get:10 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+    nfsc: Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2113 kB]
+    nfsc: Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [363 kB]
+    nfsc: Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [17.9 kB]
+    nfsc: Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [2577 kB]
+    nfsc: Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [445 kB]
+    nfsc: Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1133 kB]
+    nfsc: Get:17 http://archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [265 kB]
+    nfsc: Get:18 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [26.4 kB]
+    nfsc: Get:19 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [43.3 kB]
+    nfsc: Get:20 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [10.8 kB]
+    nfsc: Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [444 B]
+    nfsc: Get:22 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [67.7 kB]
+    nfsc: Get:23 http://archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [11.1 kB]
+    nfsc: Get:24 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [388 B]
+    nfsc: Get:25 http://archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
+    nfsc: Get:26 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [28.8 kB]
+    nfsc: Get:27 http://archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.5 kB]
+    nfsc: Get:28 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [672 B]
+    nfsc: Get:29 http://archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
+    nfsc: Get:30 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1896 kB]
+    nfsc: Get:31 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [305 kB]
+    nfsc: Get:32 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [13.3 kB]
+    nfsc: Get:33 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [2517 kB]
+    nfsc: Get:34 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [435 kB]
+    nfsc: Get:35 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [911 kB]
+    nfsc: Get:36 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [180 kB]
+    nfsc: Get:37 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [19.5 kB]
+    nfsc: Get:38 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [37.2 kB]
+    nfsc: Get:39 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [7588 B]
+    nfsc: Get:40 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [228 B]
+    nfsc: Fetched 34.2 MB in 10s (3381 kB/s)
+    nfsc: Reading package lists...
+    nfsc: Reading package lists...
+    nfsc: Building dependency tree...
+    nfsc: Reading state information...
+    nfsc: The following additional packages will be installed:
+    nfsc:   bzip2 keyutils libnfsidmap1 libssh2-1 mailcap mc-data mime-support rpcbind
+    nfsc:   unzip
+    nfsc: Suggested packages:
+    nfsc:   bzip2-doc arj catdvi | texlive-binaries dbview djvulibre-bin epub-utils
+    nfsc:   genisoimage gv imagemagick libaspell-dev links | w3m | lynx odt2txt
+    nfsc:   poppler-utils python python-boto python-tz unar wimtools xpdf | pdf-viewer
+    nfsc:   zip watchdog
+    nfsc: The following NEW packages will be installed:
+    nfsc:   bzip2 keyutils libnfsidmap1 libssh2-1 mailcap mc mc-data mime-support
+    nfsc:   nfs-common rpcbind unzip
+    nfsc: 0 upgraded, 11 newly installed, 0 to remove and 9 not upgraded.
+    nfsc: Need to get 2701 kB of archives.
+    nfsc: After this operation, 10.3 MB of additional disk space will be used.
+    nfsc: Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnfsidmap1 amd64 1:2.6.1-1ubuntu1.2 [42.9 kB]
+    nfsc: Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 rpcbind amd64 1.2.6-2build1 [46.6 kB]
+    nfsc: Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 keyutils amd64 1.6.1-2ubuntu3 [50.4 kB]
+    nfsc: Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 nfs-common amd64 1:2.6.1-1ubuntu1.2 [241 kB]
+    nfsc: Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 bzip2 amd64 1.0.8-5build1 [34.8 kB]
+    nfsc: Get:6 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libssh2-1 amd64 1.10.0-3 [109 kB]
+    nfsc: Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 mailcap all 3.70+nmu1ubuntu1 [23.8 kB]
+    nfsc: Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 mc-data all 3:4.8.27-1 [1427 kB]
+    nfsc: Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 mc amd64 3:4.8.27-1 [547 kB]
+    nfsc: Get:10 http://archive.ubuntu.com/ubuntu jammy/main amd64 mime-support all 3.66 [3696 B]
+    nfsc: Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 unzip amd64 6.0-26ubuntu3.2 [175 kB]
+    nfsc: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    nfsc: Fetched 2701 kB in 1s (2938 kB/s)
+    nfsc: Selecting previously unselected package libnfsidmap1:amd64.
+(Reading database ... 64083 files and directories currently installed.)
+    nfsc: Preparing to unpack .../00-libnfsidmap1_1%3a2.6.1-1ubuntu1.2_amd64.deb ...
+    nfsc: Unpacking libnfsidmap1:amd64 (1:2.6.1-1ubuntu1.2) ...
+    nfsc: Selecting previously unselected package rpcbind.
+    nfsc: Preparing to unpack .../01-rpcbind_1.2.6-2build1_amd64.deb ...
+    nfsc: Unpacking rpcbind (1.2.6-2build1) ...
+    nfsc: Selecting previously unselected package keyutils.
+    nfsc: Preparing to unpack .../02-keyutils_1.6.1-2ubuntu3_amd64.deb ...
+    nfsc: Unpacking keyutils (1.6.1-2ubuntu3) ...
+    nfsc: Selecting previously unselected package nfs-common.
+    nfsc: Preparing to unpack .../03-nfs-common_1%3a2.6.1-1ubuntu1.2_amd64.deb ...
+    nfsc: Unpacking nfs-common (1:2.6.1-1ubuntu1.2) ...
+    nfsc: Selecting previously unselected package bzip2.
+    nfsc: Preparing to unpack .../04-bzip2_1.0.8-5build1_amd64.deb ...
+    nfsc: Unpacking bzip2 (1.0.8-5build1) ...
+    nfsc: Selecting previously unselected package libssh2-1:amd64.
+    nfsc: Preparing to unpack .../05-libssh2-1_1.10.0-3_amd64.deb ...
+    nfsc: Unpacking libssh2-1:amd64 (1.10.0-3) ...
+    nfsc: Selecting previously unselected package mailcap.
+    nfsc: Preparing to unpack .../06-mailcap_3.70+nmu1ubuntu1_all.deb ...
+    nfsc: Unpacking mailcap (3.70+nmu1ubuntu1) ...
+    nfsc: Selecting previously unselected package mc-data.
+    nfsc: Preparing to unpack .../07-mc-data_3%3a4.8.27-1_all.deb ...
+    nfsc: Unpacking mc-data (3:4.8.27-1) ...
+    nfsc: Selecting previously unselected package mc.
+    nfsc: Preparing to unpack .../08-mc_3%3a4.8.27-1_amd64.deb ...
+    nfsc: Unpacking mc (3:4.8.27-1) ...
+    nfsc: Selecting previously unselected package mime-support.
+    nfsc: Preparing to unpack .../09-mime-support_3.66_all.deb ...
+    nfsc: Unpacking mime-support (3.66) ...
+    nfsc: Selecting previously unselected package unzip.
+    nfsc: Preparing to unpack .../10-unzip_6.0-26ubuntu3.2_amd64.deb ...
+    nfsc: Unpacking unzip (6.0-26ubuntu3.2) ...
+    nfsc: Setting up libnfsidmap1:amd64 (1:2.6.1-1ubuntu1.2) ...
+    nfsc: Setting up unzip (6.0-26ubuntu3.2) ...
+    nfsc: Setting up rpcbind (1.2.6-2build1) ...
+    nfsc: Created symlink /etc/systemd/system/multi-user.target.wants/rpcbind.service → /lib/systemd/system/rpcbind.service.
+    nfsc: Created symlink /etc/systemd/system/sockets.target.wants/rpcbind.socket → /lib/systemd/system/rpcbind.socket.
+    nfsc: Setting up bzip2 (1.0.8-5build1) ...
+    nfsc: Setting up mc-data (3:4.8.27-1) ...
+    nfsc: Setting up keyutils (1.6.1-2ubuntu3) ...
+    nfsc: Setting up libssh2-1:amd64 (1.10.0-3) ...
+    nfsc: Setting up mailcap (3.70+nmu1ubuntu1) ...
+    nfsc: Setting up mime-support (3.66) ...
+    nfsc: Setting up mc (3:4.8.27-1) ...
+    nfsc: Setting up nfs-common (1:2.6.1-1ubuntu1.2) ...
+    nfsc: 
+    nfsc: Creating config file /etc/idmapd.conf with new version
+    nfsc: 
+    nfsc: Creating config file /etc/nfs.conf with new version
+    nfsc: Adding system user `statd' (UID 114) ...
+    nfsc: Adding new user `statd' (UID 114) with group `nogroup' ...
+    nfsc: Not creating home directory `/var/lib/nfs'.
+    nfsc: Created symlink /etc/systemd/system/multi-user.target.wants/nfs-client.target → /lib/systemd/system/nfs-client.target.
+    nfsc: Created symlink /etc/systemd/system/remote-fs.target.wants/nfs-client.target → /lib/systemd/system/nfs-client.target.
+    nfsc: auth-rpcgss-module.service is a disabled or a static unit, not starting it.
+    nfsc: nfs-idmapd.service is a disabled or a static unit, not starting it.
+    nfsc: nfs-utils.service is a disabled or a static unit, not starting it.
+    nfsc: proc-fs-nfsd.mount is a disabled or a static unit, not starting it.
+    nfsc: rpc-gssd.service is a disabled or a static unit, not starting it.
+    nfsc: rpc-statd-notify.service is a disabled or a static unit, not starting it.
+    nfsc: rpc-statd.service is a disabled or a static unit, not starting it.
+    nfsc: rpc-svcgssd.service is a disabled or a static unit, not starting it.
+    nfsc: rpc_pipefs.target is a disabled or a static unit, not starting it.
+    nfsc: var-lib-nfs-rpc_pipefs.mount is a disabled or a static unit, not starting it.
+    nfsc: Processing triggers for man-db (2.10.2-1) ...
+    nfsc: Processing triggers for libc-bin (2.35-0ubuntu3.8) ...
+    nfsc: 
+    nfsc: Running kernel seems to be up-to-date.
+    nfsc: 
+    nfsc: No services need to be restarted.
+    nfsc: 
+    nfsc: No containers need to be restarted.
+    nfsc: 
+    nfsc: No user sessions are running outdated binaries.
+    nfsc: 
+    nfsc: No VM guests are running outdated hypervisor (qemu) binaries on this host.
+    nfsc: Прописываем монтирование
+    nfsc: Рестартуем сервисы
+    nfsc: Посмотрим что подмонтировалось
+    nfsc: nsfs on /run/snapd/ns/lxd.mnt type nsfs (rw)
+    nfsc: systemd-1 on /mnt type autofs (rw,relatime,fd=45,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=29639)
+    nfsc: Посмортим что лежит в каталоге
+    nfsc: from_server
+    nfsc: Прочитаем файл записанный с сервера
+    nfsc: Эта строка записана с сервера в /srv/share/upload/from_server
+    nfsc: Попробуем записать в него ещё чего-нибудь в /mnt/upload/from_server
+    nfsc: Убедимся что всё записано
+    nfsc: Эта строка записана с сервера в /srv/share/upload/from_server
+    nfsc: Эта строка записана с клиента в /mnt/upload/from_server
+    nfsc: Попробуем записать в каталог со стороны клиента в /mnt/upload/from_client
+    nfsc: Убедимся что всё записано
+    nfsc: Этот файл был записан с клиента в /mnt/upload/from_client
